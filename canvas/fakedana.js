@@ -1,9 +1,7 @@
 /**
-‎✧ Name   : fake saldo dana
-‎✧ Creator   : Rin imup
-‎✧ Category : Canvas
-‎✧ Link sumber : https://whatsapp.com/channel/0029Vb6EHtR5Ui2gHMW9zX2x
-‎✧ *Note* : Jangan hapus wm ya hargai dari sumber share nya
+ * @api {POST} /api/fake dana
+ * @desc membuat fake dana untuk prank
+ * @param {text} url - URL TikTok [required]
 ‎**/
 
 
