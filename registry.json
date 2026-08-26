@@ -1,0 +1,55 @@
+{
+  "version": 1,
+  "name": "F24nT API Registry",
+  "description": "Dynamic API registry for F24nT",
+
+  "repository": {
+    "type": "github",
+    "branch": "main"
+  },
+
+  "categories": [
+    {
+      "id": "ai",
+      "name": "AI",
+      "folder": "ai",
+      "enabled": true,
+      "icon": "ai"
+    },
+    {
+      "id": "downloader",
+      "name": "Downloader",
+      "folder": "downloader",
+      "enabled": true,
+      "icon": "download"
+    },
+    {
+      "id": "tools",
+      "name": "Tools",
+      "folder": "tools",
+      "enabled": true,
+      "icon": "tools"
+    },
+    {
+      "id": "canvas",
+      "name": "Canvas",
+      "folder": "canvas",
+      "enabled": true,
+      "icon": "canvas"
+    },
+    {
+      "id": "random",
+      "name": "Random",
+      "folder": "random",
+      "enabled": true,
+      "icon": "random"
+    }
+  ],
+
+  "settings": {
+    "autoScan": true,
+    "autoDetectResponse": true,
+    "cache": 30,
+    "allowExternalApis": true
+  }
+}
