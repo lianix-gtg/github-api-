@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "updatedAt": "2026-08-30T03:43:35.028Z",
+  "updatedAt": "2026-08-30T03:43:51.532Z",
   "models": [
     {
       "id": "f24nt",
@@ -396,7 +396,79 @@
       "group": "Rewind",
       "pro": false,
       "enabled": true,
-      "lastTest": null,
+      "lastTest": {
+        "ok": true,
+        "status": 200,
+        "ms": 2893,
+        "level": "green",
+        "preview": "{\"status\":true,\"model\":\"qwen/qwen-2.5-7b-instruct\",\"prompt\":\"Balas persis dengan kata OK.\",\"result\":\"OK\"}",
+        "trace": [
+          {
+            "stage": "adapter.compile",
+            "detail": {
+              "model": "qwen",
+              "sourceBytes": 441
+            },
+            "at": 1788061428098
+          },
+          {
+            "stage": "adapter.run",
+            "detail": {
+              "attachments": 0
+            },
+            "at": 1788061428100
+          },
+          {
+            "stage": "request.prepare",
+            "detail": {
+              "endpoint": "/api/ai/qwenai",
+              "method": "POST",
+              "attachments": 0
+            },
+            "at": 1788061428100
+          },
+          {
+            "stage": "request.response",
+            "detail": {
+              "endpoint": "/api/ai/qwenai",
+              "status": 200
+            },
+            "at": 1788061430991
+          },
+          {
+            "stage": "adapter.done",
+            "detail": {},
+            "at": 1788061430991
+          }
+        ],
+        "capabilities": {
+          "supports": {
+            "text": true,
+            "images": true,
+            "documents": true,
+            "files": true,
+            "urls": true,
+            "audio": false,
+            "video": false
+          },
+          "parameters": [
+            {
+              "name": "prompt",
+              "required": true,
+              "optional": false,
+              "raw": "prompt string required"
+            },
+            {
+              "name": "attachments",
+              "required": false,
+              "optional": true,
+              "raw": "attachments array optional"
+            }
+          ],
+          "detectedFrom": "comments+source"
+        },
+        "testedAt": "2026-08-30T03:43:50.991Z"
+      },
       "source": "// Lianix Model Adapter\n// parameter: prompt string required\n// parameter: attachments array optional\n// supports: text, files, documents, images, urls\n// Attachments are Lianix internal links. The chat UI still renders normal previews.\nmodule.exports = async function callModel(prompt, ctx) {\n  return ctx.request({\n    endpoint: \"/api/ai/qwenai\",\n    method: \"POST\",\n    param: \"text\",\n    prompt,\n    attachments: ctx.attachments\n  });\n};",
       "capabilities": {
         "supports": {
